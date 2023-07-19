@@ -1,0 +1,26 @@
+# Install the googletrans library using pip
+!pip install googletrans==4.0.0-rc1
+
+# Import the Translator class from the googletrans library
+from googletrans import Translator
+
+# Create a Translator object
+translator = Translator()
+
+# Start a while loop that will continue until the user types 'q'
+while True:
+    # Ask the user to input the text to be translated
+    text = input('Please enter the text to be translated (type q to quit):')
+
+    # If the user types 'q', break out of the loop
+    if text == 'q':
+        break
+
+    # Ask the user to input the target language for translation
+    target = input('Please enter the target language (e.g. en, zh-CN, ja):')
+
+    # Use the Translator object to translate the text to the target language
+    translation = translator.translate(text, dest=target)
+
+    # Print out the translation result
+    print(f'Translation: {translation.text}')
